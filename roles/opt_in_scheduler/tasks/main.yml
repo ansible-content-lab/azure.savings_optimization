@@ -1,0 +1,28 @@
+---
+- name: Build the Schedule for Stopping Azure instances for {{ owner }} in {{ env }}
+  ansible.controller.schedule:
+    name: Park Azure instances for {{ owner }} in {{ env }}
+    state: present
+    unified_job_template: Azure_Opt_In_Savings
+    rrule: "{{ query('ansible.controller.schedule_rrule', frequency, start_date=stop_date_time,timezone='GMT',every=repetition | int) }}"
+    extra_data:
+      owner: "{{ owner }}"
+      env: "{{ env }}"
+      opt_in_savings_start: false
+    controller_username: "{{ lookup('env', 'CONTROLLER_USERNAME') }}"
+    controller_password: "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
+    controller_host: "{{ lookup('env', 'CONTROLLER_HOST') }}"
+
+- name: Build the Schedule for Starting Azure instances for {{ owner }} in {{ env }}
+  ansible.controller.schedule:
+    name: UnPark Azure instances for {{ owner }} in {{ env }}
+    state: present
+    unified_job_template: Azure_Opt_In_Savings
+    rrule: "{{ query('ansible.controller.schedule_rrule', frequency, start_date=start_date_time,timezone='GMT',every=repetition | int) }}"
+    extra_data:
+      owner: "{{ owner }}"
+      env: "{{ env }}"
+      opt_in_savings_start: true
+    controller_username: "{{ lookup('env', 'CONTROLLER_USERNAME') }}"
+    controller_password: "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
+    controller_host: "{{ lookup('env', 'CONTROLLER_HOST') }}"
