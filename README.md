@@ -17,7 +17,7 @@ Click on the role name to be directed to the README specifically for that role.
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [azure_savings.tag_savings](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/tag_savings/README.md)   | A role to turn off / destroy untagged or instances without an owner.|
 | [azure_savings.opt_in_savings](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/opt_in_savings/README.md)   | A role to turn off / turn on Azure instances based on owner and environment tags.|
-| [azure_savings.opt_in_scheduler](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/opt_in_schedule/README.md)   | A role to create the schedule in controller to turn off / turn on Azure instances based on owner and environment tags.|
+| [azure_savings.opt_in_scheduler](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/opt_in_scheduler/README.md)   | A role to create the schedule in controller to turn off / turn on Azure instances based on owner and environment tags.|
 
 ### Playbooks
 
