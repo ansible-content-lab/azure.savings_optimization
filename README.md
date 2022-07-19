@@ -36,7 +36,7 @@ Click on the role name to be directed to the README specifically for that role.
 
 Before using the this collection, you need to install it with the Ansible Galaxy CLI:
 
-`ansible-galaxy collection install git+https://github.com/ansible-content-lab/lab.aws_roles.git`
+`ansible-galaxy collection install git+https://github.com/ansible-content-lab/azure_savings.git`
 
 You can also include it in a `requirements.yml` file and install it via `ansible-galaxy collection install -r requirements.yml`, using the format:
 
