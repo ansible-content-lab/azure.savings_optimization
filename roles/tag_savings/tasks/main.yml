@@ -25,7 +25,7 @@
     state: absent
   loop: "{{ untagged_instances }}"
   when: 
-    - untagged_instances | length  > 0
+    - untagged_instances | default('[]') | length  > 0
     - azure_savings_perform_savings
     - azure_savings_untagged
 
@@ -41,6 +41,6 @@
     started: false
   loop: "{{ missing_owner }}"
   when: 
-    - missing_owner | length  > 0
+    - missing_owner | default('[]') | length  > 0
     - azure_savings_perform_savings
     - azure_savings_no_owner
