@@ -1,6 +1,6 @@
 # Opt In Savings Role
 
-This Ansible role contains repeatable way to Turn off or On Azure instances based on environment and owner tags
+This Ansible role contains repeatable way to Turn off or On Azure instances based on environment and owner tags in order to save cloud spend during off hours
 
 ### Variables
 
