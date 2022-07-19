@@ -15,7 +15,7 @@ Click on the role name to be directed to the README specifically for that role.
 
 | Name                                                                                                                                                          | Description                                                                                                                               |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [azure_savings.tag_savings](https://github.com/ansible-content-lab/azure_savings)/blob/main/roles/tag_savings/README.md)   | A role to turn off / destroy untagged or instances without an owner.                                    |
+| [azure_savings.tag_savings](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/tag_savings/README.md)   | A role to turn off / destroy untagged or instances without an owner.|
 
 ### Playbooks
 
