@@ -4,7 +4,7 @@ This Ansible role contains a repeatable way to schedule the starting and stoppin
 
 ### Variables
 
-The following variables are used during deployment and can be configured as extra vars or passed via a survey
+The following variables are used during deployment and can be configured as a custom credential, extra vars, or passed via a survey
 
 #### Required
 ```yaml
