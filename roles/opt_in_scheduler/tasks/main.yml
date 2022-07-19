@@ -1,4 +1,11 @@
 ---
+
+- name: Pip install packages
+  ansible.builtin.pip:
+    name:
+      - pytz
+      - python-dateutil >= 2.7.0
+
 - name: Build the Schedule for Stopping Azure instances for {{ owner }} in {{ env }}
   ansible.controller.schedule:
     name: Park Azure instances for {{ owner }} in {{ env }}
