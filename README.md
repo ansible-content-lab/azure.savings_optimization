@@ -1,6 +1,6 @@
-# Ansible Collection - lab.azure_savings
+# Ansible Collection - azure_savings
 
-This repository hosts the `lab.azure_savings` Ansible Collection.
+This repository hosts the `azure_savings` Ansible Collection.
 
 The collection includes a variety of Ansible roles and playbook to help automate the savings on Azure Resources
 
@@ -16,6 +16,8 @@ Click on the role name to be directed to the README specifically for that role.
 | Name                                                                                                                                                          | Description                                                                                                                               |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [azure_savings.tag_savings](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/tag_savings/README.md)   | A role to turn off / destroy untagged or instances without an owner.|
+| [azure_savings.opt_in_savings](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/opt_in_savings/README.md)   | A role to turn off / turn on Azure instances based on owner and environment tags.|
+| [azure_savings.opt_in_scheduler](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/opt_in_schedule/README.md)   | A role to create teh schedule in controller to turn off / turn on Azure instances based on owner and environment tags.|
 
 ### Playbooks
 
