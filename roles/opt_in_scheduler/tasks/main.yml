@@ -1,6 +1,6 @@
 ---
 
-- name: Pip install packages
+- name: Pip install packages for rrule to work
   ansible.builtin.pip:
     name:
       - pytz
