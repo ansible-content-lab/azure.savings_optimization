@@ -18,7 +18,9 @@
     resource_group: "{{ hostvars[item].resource_group }}"
     state: absent
   loop: "{{ untagged_instances }}"
-  when: untagged_instances | length  > 0
+  when: 
+    - untagged_instances | length  > 0
+    - azure_savings_perform_savings
 
 - name: Display instances missing owner
   ansible.builtin.debug:
@@ -30,4 +32,6 @@
     resource_group: "{{ hostvars[item].resource_group }}"
     started: false
   loop: "{{ missing_owner }}"
-  when: missing_owner | length  > 0
+  when: 
+    - missing_owner | length  > 0
+    - azure_savings_perform_savings
