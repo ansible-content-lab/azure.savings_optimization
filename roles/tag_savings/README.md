@@ -15,7 +15,7 @@ Microsoft Azure Resource Manager credential assigned to the job template
 ```yaml
 ---
 # These variables can be configured to not perform tag savings actions and just get a report
-owner: owner tag you want to use to filter VMs
-env: environment tag you want to use to filter VMs
-opt_in_savings_start: use true if you want to start VMs, false to turn off
+azure_savings_perform_savings: true
+azure_savings_untagged: true
+azure_savings_no_owner: true
 ```
