@@ -1,12 +1,12 @@
 ---
-- name: Get Azure VM Info with desired tag
+- name: Get Azure VM Info with desired tags
   azure.azcollection.azure_rm_virtualmachine_info:
     tags:
       - environment:{{ env }}
       - owner:{{ owner }}
   register: instance_info
 
-- name: Stop instances
+- name: Change instance state
   azure.azcollection.azure_rm_virtualmachine:
     name: "{{ item.name }}"
     resource_group: "{{ item.resource_group }}"
