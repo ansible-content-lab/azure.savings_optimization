@@ -22,7 +22,7 @@
 
 - name: Build the Schedule for Starting Azure instances for {{ owner }} in {{ env }}
   ansible.controller.schedule:
-    name: Turn On instances for {{ owner }} in {{ env }}
+    name: Turn On Azure instances for {{ owner }} in {{ env }}
     state: present
     unified_job_template: Azure_Opt_In_Savings
     rrule: "{{ query('ansible.controller.schedule_rrule', frequency, start_date=start_date_time,timezone='GMT',every=repetition | int) }}"
