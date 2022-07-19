@@ -4,7 +4,7 @@ This Ansible role contains a repeatable way to schedule the starting and stoppin
 
 ### Variables
 
-The following variables are used during deployment and can be configured as extra vars at deploy time if you require something other than the defaults.
+The following variables are used during deployment and can be configured as extra vars or passed via a survey
 
 #### Required
 ```yaml
@@ -14,4 +14,8 @@ CONTROLLER_PASSWORD: password for automation controller users
 CONTROLLER_HOST: full URL for accessing controller
 owner: what owner inside Azure to filter by (using owner tag)
 env: what environment inside Azure to filter by (using env tag)
+stop_date_time: stop date time in format YYYY-MM-DD HH:MM:SS written in GMT
+start_date_time: start date time in format YYYY-MM-DD HH:MM:SS written in GMT
+repetition: how frequently to repeat
+frequency: minute, hour, day, week, month
 ```
