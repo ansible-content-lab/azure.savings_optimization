@@ -15,7 +15,7 @@
     extra_data:
       owner: "{{ owner }}"
       env: "{{ env }}"
-      opt_in_savings_start: false
+      opt_in_savings_start: 'false'
     controller_username: "{{ lookup('env', 'CONTROLLER_USERNAME') }}"
     controller_password: "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
     controller_host: "{{ lookup('env', 'CONTROLLER_HOST') }}"
@@ -29,7 +29,7 @@
     extra_data:
       owner: "{{ owner }}"
       env: "{{ env }}"
-      opt_in_savings_start: true
+      opt_in_savings_start: 'true'
     controller_username: "{{ lookup('env', 'CONTROLLER_USERNAME') }}"
     controller_password: "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
     controller_host: "{{ lookup('env', 'CONTROLLER_HOST') }}"
