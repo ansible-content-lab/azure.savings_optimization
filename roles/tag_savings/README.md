@@ -16,4 +16,6 @@ Microsoft Azure Resource Manager credential assigned to the job template
 ---
 # These variables can be configured to not perform tag savings actions and just get a report
 azure_savings_perform_savings: true
+azure_savings_untagged: true
+azure_savings_no_owner: true
 ```
