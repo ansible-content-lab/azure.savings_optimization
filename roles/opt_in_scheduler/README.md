@@ -1,6 +1,6 @@
 # Opt In Scheduler Role
 
-This Ansible role contains a repeatable way to schedule the starting and stopping of Azure VMs based on owner and environment tags
+This Ansible role contains a repeatable way to schedule the starting and stopping of Azure VMs based on owner and environment tags in order to save cloud spend during off hours
 
 ### Variables
 
