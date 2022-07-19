@@ -17,13 +17,15 @@ Click on the role name to be directed to the README specifically for that role.
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [azure_savings.tag_savings](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/tag_savings/README.md)   | A role to turn off / destroy untagged or instances without an owner.|
 | [azure_savings.opt_in_savings](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/opt_in_savings/README.md)   | A role to turn off / turn on Azure instances based on owner and environment tags.|
-| [azure_savings.opt_in_scheduler](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/opt_in_schedule/README.md)   | A role to create teh schedule in controller to turn off / turn on Azure instances based on owner and environment tags.|
+| [azure_savings.opt_in_scheduler](https://github.com/ansible-content-lab/azure_savings/blob/main/roles/opt_in_schedule/README.md)   | A role to create the schedule in controller to turn off / turn on Azure instances based on owner and environment tags.|
 
 ### Playbooks
 
 | Name                                    | Role(s) Used                           | Description                                                                                                                 |
 |-----------------------------------------|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| `lab.aws_roles.tagsavings`     | `roles.tag_savings`  | A playbook to turn off / destroy untagged or instances without an owner.                                    |
+| `azure_savings.tagsavings`     | `roles.tag_savings`  | A playbook to turn off / destroy untagged or instances without an owner.                                    |
+| `azure_savings.azure_opt_in_savings`     | `roles.opt_in_savings`  | A playbook to turn off / turn on Azure instances based on owner and environment tags                                    |
+| `azure_savings.azure_opt_in_savings_scheduler`     | `roles.opt_in_scheduler`  | A playbook to create a schedule in controller to turn off / turn on Azure instances based on owner and environment tags                                    |
 <!--end collection content-->
 
 ```
