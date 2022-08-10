@@ -1,0 +1,91 @@
+---
+- name: Setup Azure Environment
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+  
+    - name: Create the Azure Inventory
+      ansible.controller.job_template:
+        name: "Azure Dynamic Invenory"
+        description: "Azure Inventory in AAP"
+        organization: "Default"
+        state: "present"
+        
+    - name: Add in Azure Dynamic Inventory Source
+      inventory_source:
+        name: "Azure Dynamic Inventory"
+        description: "Azure Dynamic Inventory in AAP"
+        inventory: "Azure Dynamic Invenory"
+        credential: Microsoft Azure Resource Manager
+        overwrite: True
+        update_on_launch: True
+        organization: Default
+        source_vars:
+          conditional_groups:
+            azure: true
+          default_host_filters: []
+          fail_on_template_errors: false
+          hostvar_expressions:
+            ansible_host: public_ipv4_addresses[0] if public_ipv4_addresses else default(omit)
+            private_ip: private_ipv4_addresses[0] if private_ipv4_addresses else None
+            provisioning_state: provisioning_state | title
+            public_ip: public_ipv4_addresses[0] if public_ipv4_addresses else None
+            public_ip_id: public_ip_id if public_ip_id is defined else None
+            public_ip_name: public_ip_name if public_ip_name is defined else None
+            tags: tags if tags else None
+            type: resource_type
+          plain_host_names: true
+          plugin: azure.azcollection.azure_rm
+          use_contrib_script_compatible_sanitization: true
+  
+    - name: Create the Tag Savings Job Template
+      ansible.controller.job_template:
+        name: "Azure Cloud Savings"
+        job_type: "run"
+        organization: "Default"
+        inventory: "Azure Dynamic Inventory"
+        project: "Azure Demos Project"
+        extra_vars:
+          azure_savings_perform_savings: true
+          azure_savings_untagged: true
+          azure_savings_no_owner: true
+        playbook: "playbooks/tagsavings.yml"
+        credentials:
+          - "Microsoft Azure Resource Manager"
+        state: "present"
+
+    - name: Create the Opt In Scheduler Job Template
+      ansible.controller.job_template:
+        name: "Azure Opt In Job Scheduler"
+        job_type: "run"
+        organization: "Default"
+        inventory: "Demo Inventory"
+        project: "Azure Demos Project"
+        extra_vars:
+          owner: enter in VM owner
+          env: enter environment tag
+          stop_date_time: stop date time in format YYYY-MM-DD HH:MM:SS written in GMT
+          start_date_time: start date time in format YYYY-MM-DD HH:MM:SS written in GMT
+          repetition: how frequently to repeat
+          frequency: minute, hour, day, week, month
+        playbook: "playbooks/azure_opt_in_savings_scheduler.yml"
+        credentials:
+          - "This AAPs Credentials"
+        state: "present"
+        
+    - name: Create the Opt In Savings Job Template
+      ansible.controller.job_template:
+        name: "Azure Opt in Savings"
+        job_type: "run"
+        organization: "Default"
+        inventory: "Azure Dynamic Invenory"
+        project: "Azure Demos Project"
+        extra_vars:
+          owner: owner tag you want to use to filter VMs
+          env: environment tag you want to use to filter VMs
+          opt_in_savings_start: use true if you want to start VMs, false to turn off
+        playbook: "playbooks/azure_opt_in_savings.yml"
+        credentials:
+          - "Microsoft Azure Resource Manager"
+        state: "present"
