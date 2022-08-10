@@ -3,42 +3,7 @@
   hosts: localhost
   gather_facts: false
 
-  tasks:
-  
-    - name: Create the Azure Inventory
-      ansible.controller.inventory:
-        name: "Azure Dynamic Inventory"
-        description: "Azure Inventory in AAP"
-        organization: "Default"
-        state: "present"
-        
-    - name: Add in Azure Dynamic Inventory Source
-      ansible.controller.inventory_source:
-        name: "Azure Dynamic Inventory"
-        description: "Azure Dynamic Inventory in AAP"
-        inventory: "Azure Dynamic Inventory"
-        credential: Microsoft Azure Resource Manager
-        source: azure_rm
-        overwrite: true
-        update_on_launch: true
-        organization: Default
-        source_vars:
-          conditional_groups:
-            azure: true
-          default_host_filters: []
-          fail_on_template_errors: false
-          hostvar_expressions:
-            ansible_host: public_ipv4_addresses[0] if public_ipv4_addresses else default(omit)
-            private_ip: private_ipv4_addresses[0] if private_ipv4_addresses else None
-            provisioning_state: provisioning_state | title
-            public_ip: public_ipv4_addresses[0] if public_ipv4_addresses else None
-            public_ip_id: public_ip_id if public_ip_id is defined else None
-            public_ip_name: public_ip_name if public_ip_name is defined else None
-            tags: tags if tags else None
-            type: resource_type
-          plain_host_names: true
-          plugin: azure.azcollection.azure_rm
-          use_contrib_script_compatible_sanitization: true
+  tasks:  
   
     - name: Create the Tag Savings Job Template
       ansible.controller.job_template:
@@ -82,7 +47,7 @@
         name: "Azure Opt in Savings"
         job_type: "run"
         organization: "Default"
-        inventory: "Azure Dynamic Inventory"
+        inventory: "Demo Inventory"
         project: "Azure Demos Project"
         ask_variables_on_launch: true
         extra_vars:
