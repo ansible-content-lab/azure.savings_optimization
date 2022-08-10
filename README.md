@@ -64,16 +64,16 @@ This repo includes an Ansible Automation Platform (AAP) playbook to quickly popl
   - The credential type is called **'Red Hat Ansible Automation Platform'**
   - You will need to provied the **admin** user and password, or the **OAuth token**
 
-- Create a project and name it **'setup project'**
+- Create a project and name it **'Azure Demos Project'**
   - For the **Source Control Credential Type** select **Git** from the dropdown
   - For the **Source Control URL** enter the following:  https://github.com/ansible-content-lab/lab.azure_savings.git
 
 - Create a Template (Add Job Template) and name it **'setup template'**
   - For the **Inventory** select **Demo Inventory**
-  - For the **Project** select **setup project**
-  - For the **Playbook** select **azuresetup.yml**
+  - For the **Project** select **Azure Demos Project**
+  - For the **Playbook** select **playbooks/azuresetup.yml**
   - For the **Credentials** select **This AAPs Credentials**
-  - Save and launch this template.  Once complete you will find a number templates you can leverage, and there's also a Workflow Template.
+  - Save and launch this template.  Once complete you will find a number templates you can leverage.
 
 Please customize any Job Template **extra vars** as needed for your environmnet.
 
