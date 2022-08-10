@@ -61,11 +61,13 @@ This repo includes an Ansible Automation Platform (AAP) playbook to quickly popl
 
 - Add the Ansible Automation Platform credentials to your AAP instance and give it the following name: **'This AAPs Credentials'**
   - The credential type is called **'Red Hat Ansible Automation Platform'**
+  - Enter in your Controller URL
   - You will need to provide the **admin** user and password, or the **OAuth token**
 
 - Create a project and name it **'Azure Demos Project'**
   - For the **Source Control Credential Type** select **Git** from the dropdown
   - For the **Source Control URL** enter the following:  https://github.com/ansible-content-lab/lab.azure_savings.git
+  - This project does include a collections/requirements.yml. If you do not with to utilize it, ensure you turn off **Enable Collection(s) Download** in Jobs settings
 
 - Create a Template (Add Job Template) and name it **'setup template'**
   - For the **Inventory** select **Demo Inventory**
