@@ -7,7 +7,7 @@
   
     - name: Create the Azure Inventory
       ansible.controller.inventory:
-        name: "Azure Dynamic Invenory"
+        name: "Azure Dynamic Inventory"
         description: "Azure Inventory in AAP"
         organization: "Default"
         state: "present"
