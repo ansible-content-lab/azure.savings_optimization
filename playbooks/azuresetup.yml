@@ -18,8 +18,9 @@
         description: "Azure Dynamic Inventory in AAP"
         inventory: "Azure Dynamic Invenory"
         credential: Microsoft Azure Resource Manager
-        overwrite: True
-        update_on_launch: True
+        source: azure_rm
+        overwrite: true
+        update_on_launch: true
         organization: Default
         source_vars:
           conditional_groups:
