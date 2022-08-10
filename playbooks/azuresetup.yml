@@ -6,14 +6,14 @@
   tasks:
   
     - name: Create the Azure Inventory
-      ansible.controller.job_template:
+      ansible.controller.inventory:
         name: "Azure Dynamic Invenory"
         description: "Azure Inventory in AAP"
         organization: "Default"
         state: "present"
         
     - name: Add in Azure Dynamic Inventory Source
-      inventory_source:
+      ansible.controller.inventory_source:
         name: "Azure Dynamic Inventory"
         description: "Azure Dynamic Inventory in AAP"
         inventory: "Azure Dynamic Invenory"
