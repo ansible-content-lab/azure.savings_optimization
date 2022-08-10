@@ -16,7 +16,7 @@
       ansible.controller.inventory_source:
         name: "Azure Dynamic Inventory"
         description: "Azure Dynamic Inventory in AAP"
-        inventory: "Azure Dynamic Invenory"
+        inventory: "Azure Dynamic Inventory"
         credential: Microsoft Azure Resource Manager
         source: azure_rm
         overwrite: true
