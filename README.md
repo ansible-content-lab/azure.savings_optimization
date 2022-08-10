@@ -48,7 +48,7 @@ collections:
     version: main
 ```
 
-# contentsetup
+# Content Setup
 
 This repo includes an Ansible Automation Platform (AAP) playbook to quickly poplulate an instance of AAP with some content to be used in an Azure Cloud environment.
 
