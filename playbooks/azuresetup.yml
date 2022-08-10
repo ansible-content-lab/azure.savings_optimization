@@ -47,6 +47,7 @@
         organization: "Default"
         inventory: "Azure Dynamic Inventory"
         project: "Azure Demos Project"
+        ask_variables_on_launch: true
         extra_vars:
           azure_savings_perform_savings: true
           azure_savings_untagged: true
@@ -63,6 +64,7 @@
         organization: "Default"
         inventory: "Demo Inventory"
         project: "Azure Demos Project"
+        ask_variables_on_launch: true
         extra_vars:
           owner: enter in VM owner
           env: enter environment tag
@@ -82,6 +84,7 @@
         organization: "Default"
         inventory: "Azure Dynamic Inventory"
         project: "Azure Demos Project"
+        ask_variables_on_launch: true
         extra_vars:
           owner: owner tag you want to use to filter VMs
           env: environment tag you want to use to filter VMs
