@@ -57,12 +57,11 @@ This repo includes an Ansible Automation Platform (AAP) playbook to quickly popl
 
 - Add the Azure credentials to your AAP instance and give it the following name: **'Microsoft Azure Resource Manager'**
 -- The credential type is also called **'Microsoft Azure Resource Manager'**
--- You will need to provied the **Subscription ID, Tenant ID, Client ID (App ID), and Client Secret (App Secret)**
+-- You will need to provide the **Subscription ID, Tenant ID, Client ID (App ID), and Client Secret (password)**
 
 - Add the Ansible Automation Platform credentials to your AAP instance and give it the following name: **'This AAPs Credentials'**
   - The credential type is called **'Red Hat Ansible Automation Platform'**
-  - The credential type is called **'Red Hat Ansible Automation Platform'**
-  - You will need to provied the **admin** user and password, or the **OAuth token**
+  - You will need to provide the **admin** user and password, or the **OAuth token**
 
 - Create a project and name it **'Azure Demos Project'**
   - For the **Source Control Credential Type** select **Git** from the dropdown
