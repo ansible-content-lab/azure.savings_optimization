@@ -68,8 +68,8 @@
         extra_vars:
           owner: enter in VM owner
           env: enter environment tag
-          stop_date_time: stop date time in format YYYY-MM-DD HH:MM:SS written in GMT
-          start_date_time: start date time in format YYYY-MM-DD HH:MM:SS written in GMT
+          stop_date_time: YYYY-MM-DD HH:MM:SS (#Note: use GMT)
+          start_date_time: YYYY-MM-DD HH:MM:SS (# Note: use GMT)
           repetition: how frequently to repeat
           frequency: minute, hour, day, week, month
         playbook: "playbooks/azure_opt_in_savings_scheduler.yml"
