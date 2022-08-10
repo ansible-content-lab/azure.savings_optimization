@@ -5,12 +5,16 @@
 
 - name: Set the un-tagged to vars
   ansible.builtin.set_fact:
-    untagged_instances: "{{ instance_info.vms | selectattr('tags', 'equalto', {}) | map(attribute='name') | list }}"
+    untagged_instances: 
+      name: "{{ instance_info.vms | selectattr('tags', 'equalto', {}) | map(attribute='name') | list }}"
+      resource_group: "{{ instance_info.vms | selectattr('tags', 'equalto', {}) | map(attribute='resource_group') | list }}"
   when: azure_savings_untagged
     
 - name: Set the missing owner to vars
   ansible.builtin.set_fact:
-    missing_owner: "{{ instance_info.vms | selectattr('tags.owner', 'undefined') | map(attribute='name') | list }}"
+    missing_owner: 
+      name: "{{ instance_info.vms | selectattr('tags.owner', 'undefined') | map(attribute='name') | list }}"
+      resource_group: "{{ instance_info.vms | selectattr('tags.owner', 'undefined') | map(attribute='resource_group') | list }}"
   when: azure_savings_no_owner
 
 - name: Display un-tagged instances
@@ -20,8 +24,8 @@
 
 - name: Terminate every un-tagged instance
   azure.azcollection.azure_rm_virtualmachine:
-    name: "{{ item }}"
-    resource_group: "{{ hostvars[item].resource_group }}"
+    name: "{{ item.name }}"
+    resource_group: "{{ item.resource_group }}"
     state: absent
   loop: "{{ untagged_instances }}"
   when: 
@@ -36,8 +40,8 @@
 
 - name: Stop every non owner instance
   azure.azcollection.azure_rm_virtualmachine:
-    name: "{{ item }}"
-    resource_group: "{{ hostvars[item].resource_group }}"
+    name: "{{ item.name }}"
+    resource_group: "{{ item.resource_group }}"
     started: false
   loop: "{{ missing_owner }}"
   when: 
