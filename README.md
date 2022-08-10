@@ -69,7 +69,7 @@ This repo includes an Ansible Automation Platform (AAP) playbook to quickly popl
   - For the **Source Control URL** enter the following:  https://github.com/ansible-content-lab/lab.azure_savings.git
   - This project does include a collections/requirements.yml. If you do not with to utilize it, ensure you turn off **Enable Collection(s) Download** in Jobs settings
 
-- Create a Template (Add Job Template) and name it **'setup template'**
+- Create a Template (Add Job Template) and name it **'Setup Template'**
   - For the **Inventory** select **Demo Inventory**
   - For the **Project** select **Azure Demos Project**
   - For the **Playbook** select **playbooks/azuresetup.yml**
