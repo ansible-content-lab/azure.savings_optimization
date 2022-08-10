@@ -45,7 +45,7 @@
         name: "Azure Cloud Savings"
         job_type: "run"
         organization: "Default"
-        inventory: "Azure Dynamic Inventory"
+        inventory: "Demo Inventory"
         project: "Azure Demos Project"
         ask_variables_on_launch: true
         extra_vars:
