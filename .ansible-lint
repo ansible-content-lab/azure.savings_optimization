@@ -1,0 +1,17 @@
+---
+exclude_paths:
+  - .cache/
+  - .github/
+  - test
+
+enable_list:
+  - empty-string-compare
+  - no-log-password
+  - no-same-owner
+  - yaml
+
+skip_list:
+  - package-latest
+  - role-name[path]
+  - yaml[line-length]
+  - galaxy[no-changelog]
