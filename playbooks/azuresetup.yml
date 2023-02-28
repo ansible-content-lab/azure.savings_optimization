@@ -3,8 +3,7 @@
   hosts: localhost
   gather_facts: false
 
-  tasks:  
-  
+  tasks:
     - name: Create the Tag Savings Job Template
       ansible.controller.job_template:
         name: "Azure Tag Savings"
@@ -41,7 +40,7 @@
         credentials:
           - "This AAPs Credentials"
         state: "present"
-        
+
     - name: Create the Opt In Savings Job Template
       ansible.controller.job_template:
         name: "Azure Opt in Savings"

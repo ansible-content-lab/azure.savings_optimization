@@ -2,8 +2,8 @@
 - name: Get Azure VM Info with desired tags
   azure.azcollection.azure_rm_virtualmachine_info:
     tags:
-      - environment:{{ env }}
-      - owner:{{ owner }}
+      - "environment: {{ env }}"
+      - "owner: {{ owner }}"
   register: instance_info
 
 - name: Change instance state

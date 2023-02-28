@@ -6,12 +6,12 @@
       - pytz
       - python-dateutil >= 2.7.0
 
-- name: Build the Schedule for Stopping Azure instances for {{ owner }} in {{ env }}
+- name: "Build the Schedule for Stopping Azure instances for {{ owner }} in {{ env }}"
   ansible.controller.schedule:
-    name: Turn Off Azure instances for {{ owner }} in {{ env }}
+    name: "Turn Off Azure instances for {{ owner }} in {{ env }}"
     state: present
     unified_job_template: Azure Opt in Savings
-    rrule: "{{ query('ansible.controller.schedule_rrule', frequency, start_date=stop_date_time,timezone='GMT',every=repetition | int) }}"
+    rrule: "{{ query('ansible.controller.schedule_rrule', frequency, start_date=stop_date_time, timezone='GMT', every=repetition | int) }}"
     extra_data:
       owner: "{{ owner }}"
       env: "{{ env }}"
@@ -20,12 +20,12 @@
     controller_password: "{{ lookup('env', 'CONTROLLER_PASSWORD') }}"
     controller_host: "{{ lookup('env', 'CONTROLLER_HOST') }}"
 
-- name: Build the Schedule for Starting Azure instances for {{ owner }} in {{ env }}
+- name: "Build the Schedule for Starting Azure instances for {{ owner }} in {{ env }}"
   ansible.controller.schedule:
-    name: Turn On Azure instances for {{ owner }} in {{ env }}
+    name: "Turn On Azure instances for {{ owner }} in {{ env }}"
     state: present
     unified_job_template: Azure Opt in Savings
-    rrule: "{{ query('ansible.controller.schedule_rrule', frequency, start_date=start_date_time,timezone='GMT',every=repetition | int) }}"
+    rrule: "{{ query('ansible.controller.schedule_rrule', frequency, start_date=start_date_time, timezone='GMT', every=repetition | int) }}"
     extra_data:
       owner: "{{ owner }}"
       env: "{{ env }}"

@@ -15,3 +15,4 @@ skip_list:
   - role-name[path]
   - yaml[line-length]
   - galaxy[no-changelog]
+  - name[template]
