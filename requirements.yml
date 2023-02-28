@@ -1,0 +1,5 @@
+---
+collections:
+  - name: ansible.controller
+  - name: azure.azcollection
+    version: 1.14.0
